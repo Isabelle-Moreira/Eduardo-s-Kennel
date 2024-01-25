@@ -1,0 +1,15 @@
+#topo-pagina{
+    background-color: #FFED4F;
+}
+.nav-link{
+    text-transform: uppercase;
+}
+#carrousel{
+    padding: 0;
+    padding-top: 5em!important ;
+}
+#carrousel img{
+    object-fit: cover;
+    height: 600px;
+    object-position:  top;
+}
