@@ -12,13 +12,13 @@ Aplicação Web para fazer orçamentos para o canil do Senhor Eduardo.
 
 # Instruções para executar o sistema:
 <p>Fazer o download</p>
-<p>realizar a descompactação </p>
-<p>abrir no Visual Studio code</p>
-<p>primeiramente inicializar indo para o diretório de back-end: cd back-end </p>
-<p>instalar dependências do projeto: npm i</p>
-<p>rodar o back-end com o seguinte comando: node serve.js </p>
-<p>para visualizar o front basta abrir o index.html no Browser e de lá clicar nos link para pagina de orçamento</p>
-<p>estando na pagina orcamento.html basta preencher o formulário e clicar no botão.</p>
+<p>Realizar a descompactação </p>
+<p>Abrir no Visual Studio code</p>
+<p>Primeiramente inicializar indo para o diretório de back-end: cd back-end </p>
+<p>Instalar dependências do projeto: npm i</p>
+<p>Rodar o back-end com o seguinte comando: node server.js </p>
+<p>Para visualizar o front basta abrir o index.html no Browser e de lá clicar nos link para pagina de orçamento</p>
+<p>Estando na pagina orcamento.html basta preencher o formulário e clicar no botão.</p>
 
 
 # Decisões de projeto
