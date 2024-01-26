@@ -1,3 +1,6 @@
+body{
+   font-family: 'Lato', sans-serif;
+}
 #topo-pagina{
     background-color: #FFED4F;
 }
@@ -8,8 +11,104 @@
     padding: 0;
     padding-top: 5em!important ;
 }
+#hamburguer-open-body, #hamburguer-open-header{
+    background-color: #FFF7B4;
+ }
 #carrousel img{
     object-fit: cover;
     height: 600px;
     object-position:  top;
 }
+#logo{
+    width: 300px;
+    height: 100px;
+    object-fit: cover;
+}
+#rodape{
+    background-color:#FFED4F;
+    color: #702800;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.container-petshops{
+    margin-top: 200px;
+    margin-bottom: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    box-shadow: 10px 5px 5px rgb(148, 147, 147);
+    border: none;
+}
+.card-body,.list-group-item{
+    background-color: #FFF7B4;
+}
+
+.card-img-top{
+    height: 228px;
+    width: 288px;
+    object-fit: cover;
+}
+
+.card-text{
+   font-weight: bolder;
+   font-size: medium;
+}
+
+
+.bn30 {
+    border: 5em;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    -webkit-transform: translate(0);
+    transform: translate(0);
+    background-image: linear-gradient(45deg, #702800, #ffed4f);
+    padding: 0.7em 2em;
+    border-radius: 65px;
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.438);
+    -webkit-transition: box-shadow 0.25s;
+    transition: box-shadow 0.25s;
+    color: #702800;
+  }
+  
+  .bn30 .text {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(45deg, #702800, #ffed4f);
+  }
+  
+  .bn30:after {
+    content: "";
+    border-radius: 18px;
+    position: absolute;
+    margin: 4px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background: #FFF7B4;
+  }
+  
+  .bn30:hover {
+    background-image: linear-gradient(-45deg, #ffed4f, #702800);
+    box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
+  }
+  
+  .bn30:hover .text {
+    background-image: linear-gradient(-45deg, #ffed4f, #702800);
+  }
+
+  #botao{
+    width: 198px;
+    height: 48px;
+    margin-bottom: 200px;
+    margin-left: 45%;
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+  }
