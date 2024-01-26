@@ -40,5 +40,55 @@ router.post('/cadastro/precos', (req, res) => {
 })
 
 
+router.get('/lista/petshops', (req, res, next) => {
+  Controller.listPetshops().then((petshops) => res.send(petshops))
+  .catch((err) => {
+    console.log('Erro na consulta', JSON.stringify(err))
+    return res.send(err)
+  });
+});
+
+
+router.get('/lista/tiposcaes', (req, res, next) => {
+  Controller.listCaes().then((tipos) => res.send(tipos))
+  .catch((err) => {
+    console.log('Erro na consulta', JSON.stringify(err))
+    return res.send(err)
+  });
+});
+
+
+router.get('/lista/precos', (req, res, next) => {
+  Controller.listprecos().then((precos) => res.send(precos))
+  .catch((err) => {
+    console.log('Erro na consulta', JSON.stringify(err))
+    return res.send(err)
+  });
+});
+
+router.get('/petshop/instancia/:id', (req, res, next) => {
+  Controller.getPetshop(req.params.id)
+    .then((petshop) => {
+      res.send(petshop);
+    })
+    .catch((err) => {
+      console.log('Erro na consulta', JSON.stringify(err));
+      return res.status(500).send({ error: 'Erro na consulta' });
+    });
+});
+
+router.post('/orcamento', async (req, res) => {
+  try {
+    const melhorPetshop = await Controller.getMelhorPetshop(
+      req.body.qtdCaesGrandes,
+      req.body.qtdCaesPequenos,
+      req.body.dataBanho
+    );
+    res.send(melhorPetshop);
+  } catch (err) {
+    console.error('Erro no cadastro do item', JSON.stringify(err));
+    res.status(400).send(err);
+  }
+});
 
   module.exports = router
