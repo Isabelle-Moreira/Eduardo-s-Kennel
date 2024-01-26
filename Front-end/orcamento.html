@@ -23,8 +23,8 @@
         <div class="container-fluid">
             <div class="d-flex flex-wrap justify-content-lg-start">
                 <div class="container d-flex col no-gutters ms-0">
-                        <a href="./index.html"  id="icone-header" class="my-2 pt-1"><img src="./assets/seta-esquerda.png" alt=""
-                                id="seta" /></a>
+                    <a href="./index.html" id="icone-header" class="my-2 pt-1"><img src="./assets/seta-esquerda.png"
+                            alt="" id="seta" /></a>
                 </div>
             </div>
         </div>
@@ -42,12 +42,12 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="number" min="1"  class="form-control" name="caes_pequenos " id="caes_pequenos"
+                    <input type="number" min="1" class="form-control" name="caes_pequenos " id="caes_pequenos"
                         placeholder="Quantidade cães pequenos" maxlength="70" />
                     <label for="Quantidade cães pequenos">Quantidade de cães pequenos </label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" min="1"  class="form-control" name="caes_grandes" id="caes_grandes"
+                    <input type="number" min="1" class="form-control" name="caes_grandes" id="caes_grandes"
                         placeholder="Quantidade cães grandes" maxlength="70" />
                     <label for="Quantidade cães grandes">Quantidade de cães grandes</label>
                 </div>
@@ -57,20 +57,16 @@
                 </button>
             </form>
         </div>
-        <section id="melhor-valor" style="display:block">
+        <section id="melhor-valor" style="display:none">
             <div class="container my-4" id="melhor-opcao">
                 <p>Melhor opção:</p>
                 <h4 id="nome-melhor-pet">ChowChawgas</h4>
             </div>
             <div class="container my-4" id="valor">
-                <img
-                src="./assets/icone-dinheiro.png"
-                class="img-fluid"
-                id="icone-dinheiro"
-              />
+                <img src="./assets/icone-dinheiro.png" class="img-fluid" id="icone-dinheiro" />
                 <p>Valor total:</p>
                 <h4 id="valor-total"> 215,00</h4>
-                </div>
+            </div>
         </section>
     </main>
 
@@ -99,6 +95,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+
+        <script>
+            const botaoOrcamento = document.getElementById('Botao-orcamento')
+            botaoOrcamento.addEventListener('click', fazerOrcamento); // Removi os parênteses aqui
+        
+            function fazerOrcamento() {
+                const dataOrcamento = document.getElementById('orcamento_data').value;
+                const quantidadePequenos = document.getElementById('caes_pequenos').value;
+                const quantidadeGrandes = document.getElementById('caes_grandes').value;
+        
+                const dadosOrcamento = {
+                    dataBanho: dataOrcamento,
+                    qtdCaesPequenos: quantidadePequenos,
+                    qtdCaesGrandes: quantidadeGrandes,
+                };
+        
+                fetch('http://localhost:3000/eduardos/orcamento', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(dadosOrcamento),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Sucesso no orcamento:', data);
+                        let nomePetshop = data.petshop_nome; 
+                        let valorOrcamento = data.valor_total;
+        
+                        document.getElementById("nome-melhor-pet").innerHTML = nomePetshop;
+                        document.getElementById("valor-total").innerHTML = valorOrcamento;
+        
+                        document.getElementById("melhor-valor").style.display = "block";
+                    })
+                    .catch(error => {
+                        console.error('Erro ao fazer orcamento', error);
+                    });
+            }
+        </script>
 </body>
 
 </html>
