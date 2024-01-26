@@ -6,7 +6,6 @@ const TiposCaes = require('./tipoCao')
 const Precos = database.define('Precos', {
     id: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },

@@ -5,13 +5,13 @@ const tipoCaoModel=require('../models/tipoCao')
 const {Op} = require("sequelize")
 
 async function createPetshop(petshop){
-    return await userModel.create(petshop);
+    return await petshopModel.create(petshop);
 }
 async function createTipoCao(tipoCao){
-    return await userModel.create(tipoCao);
+    return await tipoCaoModel.create(tipoCao);
 }
 async function createPrecos(preco){
-    return await userModel.create(preco);
+    return await precoModel.create(preco);
 }
 
 async function encontrarMelhorPetshop(quantidadeCaesGrandes, quantidadeCaesPequenos, dataServico) {
@@ -50,4 +50,4 @@ async function encontrarMelhorPetshop(quantidadeCaesGrandes, quantidadeCaesPeque
     return precoTotal;
   }
   
-  module.exports = { encontrarMelhorPetshop };
+  module.exports = { encontrarMelhorPetshop,createPetshop,createTipoCao,createPrecos };

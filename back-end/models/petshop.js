@@ -4,7 +4,6 @@ const database = require('../database/database');
 const Petshops = database.define('Petshops', {
     id: {
         type: Sequelize.INTEGER,
-        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
