@@ -18,7 +18,7 @@ Aplicação Web para fazer orçamentos para o canil do Senhor Eduardo.
 <p>instalar dependências do projeto: npm i</p>
 <p>rodar o back-end com o seguinte comando: node serve.js </p>
 <p>para visualizar o front basta abrir o index.html no Browser e de lá clicar nos link para pagina de orçamento</p>
-<p>estando na pagina orcamento.html basta preenche os o formulario e clicar no botão.</p>
+<p>estando na pagina orcamento.html basta preencher o formulário e clicar no botão.</p>
 
 
 # Decisões de projeto
