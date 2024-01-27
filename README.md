@@ -23,6 +23,6 @@ Aplicação Web para fazer orçamentos para o canil do Senhor Eduardo.
 
 # Decisões de projeto
 <p>API</p>
-<p>Arquitetura MCV</p>
-<p>Banco de Dados relacional</p>
+<p>Arquitetura MVC</p>
+<p>Banco de dados relacional</p>
 
